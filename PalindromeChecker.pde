@@ -16,7 +16,7 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  if(word.equals(reverse(word)))
+  if(word.equalsIgnoreCase(reverse(word)))
     return true;
   return false;
 }
@@ -24,11 +24,21 @@ public String reverse(String str)
 {
     String sNew = new String();
     for(int i=str.length()-1; i>=0; i--){
-      if(str.substring())
-
+      if(!str.substring(i, i+1).equals(" ") && Character.isLetter(str.charAt(i)))
        sNew = sNew + str.substring(i, i+1);
     }
+    System.out.println(sNew);
     return sNew;
+
+}
+public String justLetters(String str){
+  string result = new String();
+  for(int i=0; i<=str.length()-1; i++){
+    if(!str.substring(i, i+1).equals(" ") && Character.isLetter(str.charAt(i)))
+      result = result + str.substring(i, i+1);
+  }
+  System.out.println(result);
+  return result;
 }
 
 
